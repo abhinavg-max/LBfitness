@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LB FITNESS</title>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="bg" aria-hidden="true"></div>
+
+<nav aria-label="Sections">
+<a class="brand" href="#home">LB FITNESS</a>
+<div class="links"><a href="#home">Home</a><a href="#inside">Inside</a><a href="#plans">Plans</a><a href="#coaches">Coaches</a><a href="#gallery">Gallery</a><a href="#stories">Testimonials</a><a href="#visit">Visit</a></div>
+<div class="right"><a class="login" href="#login">Log in</a></div>
+</nav>
+
+
+<div id="login" role="region" aria-label="Login" data-mode="member">
+<div class="lp-art"><div class="mark">LB FITNESS</div><div><h2 id="lg-art">Welcome back.</h2><p id="lg-art-sub">Your next session starts here.</p></div></div>
+<div class="lp-form">
+<a class="lp-back" href="#home">&larr; Back to site</a>
+<div class="lp-card">
+<div class="seg" role="tablist" aria-label="Login type"><button type="button" role="tab" id="seg-member" aria-selected="true">Member</button><button type="button" role="tab" id="seg-admin" aria-selected="false">Admin</button></div>
+<h2 id="lg-title">Member login</h2>
+<p class="sub" id="lg-sub">Enter your mobile number and the PIN given by the gym.</p>
+<form id="login-form">
+<div class="fld"><label for="lg-user" id="lg-ulabel">Mobile number</label><input id="lg-user" type="tel" inputmode="numeric" autocomplete="tel" placeholder="Enter your mobile number" required></div>
+<div class="fld member-only"><label for="lg-pin">PIN</label><input id="lg-pin" type="password" inputmode="numeric" autocomplete="current-password" maxlength="6" placeholder="Your 4 to 6 digit PIN"></div>
+<div class="fld admin-only"><label for="lg-pass">Password</label><div class="pw"><input id="lg-pass" type="password" autocomplete="current-password"><button type="button" id="lg-show" aria-label="Show password">Show</button></div></div>
+<label class="rem"><input type="checkbox" id="lg-remember"> Remember me</label>
+<button class="btn" type="submit" id="lg-submit">Log in</button>
+<div id="login-msg" role="status"></div>
+</form>
+<p class="lp-foot member-only">Your login is created by the gym. New here? <a href="#visit">Visit us</a> to join.</p>
+</div></div></div>
+<div id="member" role="region" aria-label="Member panel">
+<header class="mp-top"><span class="mark">LB FITNESS</span><div class="mp-user"><span>Hi, <b id="mp-first"></b></span><a class="mp-out" href="#home">Log out</a></div></header>
+<div class="mp-wrap">
+<h2 class="mp-title">Member panel</h2>
+<div class="mp-grid">
+<article class="card mp-profile">
+<div class="av2" id="mp-av"></div>
+<dl class="mp-dl"><dt>Name</dt><dd id="mp-name"></dd><dt>Mobile number</dt><dd id="mp-mobile"></dd></dl>
+</article>
+<article class="card mp-plan" id="mp-plan">
+<div class="lbl">Your package</div>
+<h3 id="mp-pkg"></h3>
+<div class="big"><b id="mp-days">0</b><span id="mp-dlabel">days left</span></div>
+<div class="bar" role="progressbar" aria-label="Membership used" aria-valuemin="0" aria-valuemax="100" id="mp-barwrap"><i id="mp-bar"></i></div>
+<div class="dates"><div><span>Joined</span><b id="mp-join"></b></div><div><span id="mp-explbl">Expires</span><b id="mp-exp"></b></div></div>
+<p class="note" id="mp-note">To renew or pay, visit the front desk.</p>
+</article>
+<article class="card mp-calc">
+<div class="lbl">Calculator</div>
+<h3>Protein and calorie calculator</h3>
+<div class="cform">
+<div class="fld"><label for="c-gender">Gender</label><select id="c-gender"><option value="m">Male</option><option value="f">Female</option></select></div>
+<div class="fld"><label for="c-age">Age (years)</label><input id="c-age" type="number" min="14" max="90" value="28"></div>
+<div class="fld"><label for="c-h">Height (cm)</label><input id="c-h" type="number" min="120" max="230" value="172"></div>
+<div class="fld"><label for="c-w">Weight (kg)</label><input id="c-w" type="number" min="30" max="250" value="70"></div>
+<div class="fld"><label for="c-act">Activity level</label><select id="c-act"><option value="1.2">Sedentary: desk job, little exercise</option><option value="1.375">Lightly active: 1 to 3 workouts a week</option><option value="1.55" selected>Moderately active: 3 to 5 workouts a week</option><option value="1.725">Very active: 6 to 7 workouts a week</option><option value="1.9">Extra active: hard training twice a day</option></select></div>
+<div class="fld"><label for="c-goal">Goal</label><select id="c-goal"><option value="lose">Lose fat</option><option value="maintain" selected>Maintain weight</option><option value="gain">Build muscle</option></select></div>
+</div>
+<div class="res" aria-live="polite">
+<div><b id="r-cal">0</b><span>Calories / day</span></div>
+<div><b id="r-pro">0</b><span>Protein (g)</span></div>
+<div><b id="r-carb">0</b><span>Carbs (g)</span></div>
+<div><b id="r-fat">0</b><span>Fat (g)</span></div>
+</div>
+<p class="note">Estimates only. Ask your coach to fine-tune these numbers.</p>
+</article>
+</div></div></div>
+<div id="admin" role="region" aria-label="Admin panel">
+<aside class="ad-side">
+<div class="ad-brand"><span class="mark">LB FITNESS</span><span class="ad-tag">Admin</span></div>
+<nav class="ad-nav" aria-label="Admin sections">
+<button type="button" data-view="dash" aria-current="page">Dashboard</button>
+<button type="button" data-view="members">Members</button>
+<button type="button" data-view="stats">Stats</button>
+</nav>
+<a class="ad-out" href="#home">Log out</a>
+</aside>
+<div class="ad-main">
+<div class="ad-view" id="v-dash">
+<div class="ad-head"><h2>Dashboard</h2><button class="btn" type="button" id="ad-add">+ Add member</button></div>
+<div class="stats4" id="ad-stats"></div>
+</div>
+<div class="ad-view" id="v-members" hidden>
+<div class="ad-head"><h2>Members</h2></div>
+<div class="tools"><input type="search" id="ad-q" placeholder="Search by name or mobile number" aria-label="Search members"><div class="chips" id="ad-chips"></div></div>
+<div class="mhead mgrid"><span></span><span>Member</span><span class="hm">Package</span><span class="hm">Expires</span><span>Status</span><span class="hm">Pending</span></div>
+<div id="ad-list"></div>
+</div>
+<div class="ad-view" id="v-stats" hidden>
+<div class="ad-head"><h2>Stats</h2></div>
+<div class="stats4" id="in-cards"></div>
+<p class="fhint" style="margin:14px 0 22px">Income is counted from the total amount of each package (the negotiated price), in the month the deal was made.</p>
+<div class="sgrid">
+<article class="card"><div class="lbl">Most active plan</div><div id="in-top"></div></article>
+<article class="card"><div class="lbl">Members renewed</div><div id="in-ren"></div></article>
+</div>
+</div>
+</div>
+<div id="ad-modal" role="dialog" aria-modal="true" aria-labelledby="m-name">
+<div class="mcard">
+<button type="button" class="mclose" id="m-close" aria-label="Close">&times;</button>
+<div class="mtop">
+<div class="mphoto" id="m-photo" role="button" tabindex="0" aria-label="View photo" title="Click to enlarge"></div>
+<div><h3 id="m-name"></h3><p id="m-mobile" class="mmob"></p>
+<div class="btnrow"><button type="button" class="btn sm outline" id="m-up">Upload photo</button><button type="button" class="btn sm" id="m-renew">Renew</button><button type="button" class="btn sm outline" id="m-paybtn">Add payment</button><button type="button" class="btn sm outline" id="m-edit">Edit</button><button type="button" class="btn sm outline" id="m-delphoto">Remove photo</button></div>
+<input type="file" id="m-file" accept="image/jpeg,image/png,image/webp" hidden><input type="file" id="m-cam" accept="image/*" capture="user" hidden>
+<p class="hint">Only admins can see this photo. It does not show in the member panel.</p></div>
+</div>
+<div class="minfo">
+<div><span>Package</span><b id="m-pkg"></b></div>
+<div><span>Joined</span><b id="m-join"></b></div>
+<div><span>Expires</span><b id="m-exp"></b></div>
+<div><span>Time left</span><b id="m-left"></b></div>
+</div>
+<div class="bar"><i id="m-bar"></i></div>
+<div class="pinrow"><span>Member login PIN</span><b id="m-pin">&bull;&bull;&bull;&bull;</b><button type="button" class="btn sm outline" id="m-pinbtn">Show</button></div>
+<h4 class="mh">Payment record</h4>
+<table class="ptab"><thead><tr><th>Date</th><th>Mode</th><th class="r">Amount</th></tr></thead><tbody id="m-pay"></tbody></table>
+<div class="psum"><div><span>Total fee</span><b id="m-fee"></b></div><div><span>Paid</span><b id="m-paid"></b></div><div><span>Pending</span><b id="m-pend"></b></div></div>
+</div></div>
+<div id="am-modal" role="dialog" aria-modal="true" aria-labelledby="am-title">
+<div class="mcard amcard">
+<button type="button" class="mclose" id="am-close" aria-label="Close">&times;</button>
+<h3 class="amt" id="am-title">Add member</h3>
+<form id="am-form" novalidate>
+<div class="mtop">
+<div class="mphoto" id="am-photo"><span style="font-size:16px;color:var(--mute);font-family:var(--body);font-weight:400">No photo</span></div>
+<div><button type="button" class="btn sm" id="am-up">Upload photo</button><input type="file" id="am-file" accept="image/jpeg,image/png,image/webp" hidden>
+<p class="hint">Only admins can see this photo. It does not show in the member panel.</p></div>
+</div>
+<div class="fgrid">
+<div class="fld"><label for="am-name">Name</label><input id="am-name" type="text" autocomplete="off"></div>
+<div class="fld"><label for="am-mobile">Mobile number</label><input id="am-mobile" type="tel" inputmode="numeric" autocomplete="off" placeholder="10 digit number"></div>
+<div class="fld"><label for="am-pin">Member PIN (4 to 6 digits)</label><input id="am-pin" type="text" inputmode="numeric" maxlength="6" autocomplete="off"></div>
+</div>
+<h4 class="mh">Package</h4>
+<div class="fgrid">
+<div class="fld"><label for="am-plan">Package type</label><select id="am-plan"><option>Open</option><option>Coached</option></select></div>
+<div class="fld"><label for="am-months">Duration</label><select id="am-months"><option value="1">1 month</option><option value="3">3 months</option><option value="6">6 months</option><option value="12">12 months</option></select></div>
+<div class="fld"><label for="am-start">Start date</label><input id="am-start" type="date"></div>
+<div class="fld"><label for="am-end">End date</label><input id="am-end" readonly></div>
+</div>
+<h4 class="mh">Payment</h4>
+<div class="fgrid">
+<div class="fld"><label for="am-total">Total amount (&#8377;)</label><input id="am-total" type="number" min="0" step="1"></div>
+<div class="fld"><label for="am-paid">Amount paid (&#8377;)</label><input id="am-paid" type="number" min="0" step="1" placeholder="0"></div>
+</div>
+<p class="fhint" id="am-hint"></p>
+<div class="fgrid">
+<div class="fld"><label for="am-left">Payment left</label><input id="am-left" readonly></div>
+<div class="fld"><label for="am-mode">Payment mode</label><select id="am-mode"><option>Cash</option><option>UPI</option><option>Card</option></select></div>
+<div class="fld"><label for="am-date">Date of transaction</label><input id="am-date" type="date"></div>
+</div>
+<div class="amerr" id="am-err" role="alert"></div>
+<div class="acts"><button type="button" class="btn outline" id="am-cancel">Cancel</button><button type="submit" class="btn">Add member</button></div>
+</form>
+</div></div>
+<div id="rn-modal" role="dialog" aria-modal="true" aria-labelledby="rn-title">
+<div class="mcard amcard">
+<button type="button" class="mclose" id="rn-close" aria-label="Close">&times;</button>
+<h3 class="amt" id="rn-title">Renew membership</h3>
+<p class="mmob" id="rn-who" style="margin:-10px 0 14px"></p>
+<form id="rn-form" novalidate>
+<h4 class="mh" style="margin-top:6px">Package</h4>
+<div class="fgrid">
+<div class="fld"><label for="rn-plan">Package type</label><select id="rn-plan"><option>Open</option><option>Coached</option></select></div>
+<div class="fld"><label for="rn-months">Duration</label><select id="rn-months"><option value="1">1 month</option><option value="3">3 months</option><option value="6">6 months</option><option value="12">12 months</option></select></div>
+<div class="fld"><label for="rn-start">Start date</label><input id="rn-start" type="date"></div>
+<div class="fld"><label for="rn-end">End date</label><input id="rn-end" readonly></div>
+</div>
+<h4 class="mh">Payment</h4>
+<div class="fgrid">
+<div class="fld"><label for="rn-total">Total amount (&#8377;)</label><input id="rn-total" type="number" min="0" step="1"></div>
+<div class="fld"><label for="rn-paid">Amount paid (&#8377;)</label><input id="rn-paid" type="number" min="0" step="1" placeholder="0"></div>
+</div>
+<p class="fhint" id="rn-hint"></p>
+<div class="fgrid">
+<div class="fld"><label for="rn-left">Payment left</label><input id="rn-left" readonly></div>
+<div class="fld"><label for="rn-mode">Payment mode</label><select id="rn-mode"><option>Cash</option><option>UPI</option><option>Card</option></select></div>
+<div class="fld"><label for="rn-date">Date of transaction</label><input id="rn-date" type="date"></div>
+</div>
+<div class="amerr" id="rn-err" role="alert"></div>
+<div class="acts"><button type="button" class="btn outline" id="rn-cancel">Cancel</button><button type="submit" class="btn">Renew</button></div>
+</form>
+</div></div>
+<div id="pp-modal" role="dialog" aria-modal="true" aria-labelledby="pp-title">
+<div class="mcard amcard">
+<button type="button" class="mclose" id="pp-close" aria-label="Close">&times;</button>
+<h3 class="amt" id="pp-title">Add payment</h3>
+<p class="mmob" id="pp-who" style="margin:-10px 0 14px"></p>
+<form id="pp-form" novalidate>
+<div class="fgrid">
+<div class="fld"><label for="pp-total">Total amount</label><input id="pp-total" readonly></div>
+<div class="fld"><label for="pp-before">Paid so far</label><input id="pp-before" readonly></div>
+</div>
+<h4 class="mh" style="margin-top:6px">Previous payments</h4>
+<table class="ptab"><thead><tr><th>Date</th><th>Mode</th><th class="r">Amount</th></tr></thead><tbody id="pp-hist"></tbody></table>
+<h4 class="mh">New payment</h4>
+<div class="fgrid">
+<div class="fld"><label for="pp-paid">Amount paid (&#8377;)</label><input id="pp-paid" type="number" min="0" step="1" placeholder="0"></div>
+<div class="fld"><label for="pp-left">Amount left</label><input id="pp-left" readonly></div>
+<div class="fld"><label for="pp-mode">Payment mode</label><select id="pp-mode"><option>Cash</option><option>UPI</option><option>Card</option></select></div>
+<div class="fld"><label for="pp-date">Date of transaction</label><input id="pp-date" type="date"></div>
+</div>
+<div class="amerr" id="pp-err" role="alert"></div>
+<div class="acts"><button type="button" class="btn outline" id="pp-cancel">Cancel</button><button type="submit" class="btn">Add payment</button></div>
+</form>
+</div></div>
+<div id="ed-modal" role="dialog" aria-modal="true" aria-labelledby="ed-title">
+<div class="mcard amcard">
+<button type="button" class="mclose" id="ed-close" aria-label="Close">&times;</button>
+<h3 class="amt" id="ed-title">Edit member</h3>
+<form id="ed-form" novalidate>
+<div class="fgrid">
+<div class="fld"><label for="ed-name">Name</label><input id="ed-name" type="text" autocomplete="off"></div>
+<div class="fld"><label for="ed-mobile">Mobile number</label><input id="ed-mobile" type="tel" inputmode="numeric" autocomplete="off"></div>
+<div class="fld"><label for="ed-pin">New PIN (leave empty to keep)</label><input id="ed-pin" type="text" inputmode="numeric" maxlength="6" autocomplete="off"></div>
+</div>
+<h4 class="mh">Packages</h4>
+<div id="ed-terms"></div>
+<h4 class="mh">Payments</h4>
+<div id="ed-pays"></div>
+<div class="fgrid" style="margin-top:8px">
+<div class="fld"><label for="ed-fee">Total fee</label><input id="ed-fee" readonly></div>
+<div class="fld"><label for="ed-paid">Total paid</label><input id="ed-paid" readonly></div>
+<div class="fld"><label for="ed-left">Payment left</label><input id="ed-left" readonly></div>
+</div>
+<div class="amerr" id="ed-err" role="alert"></div>
+<div class="acts"><button type="button" class="btn outline" id="ed-delm" style="margin-right:auto;color:#ff8585">Delete member</button><button type="button" class="btn outline" id="ed-cancel">Cancel</button><button type="submit" class="btn">Save changes</button></div>
+</form>
+</div></div>
+<div id="ph-modal" role="dialog" aria-modal="true" aria-label="Member photo">
+<div class="phcard"><button type="button" class="mclose" id="ph-close" aria-label="Close">&times;</button><img id="ph-img" alt=""><p id="ph-cap"></p></div></div>
+<div id="up-modal" role="dialog" aria-modal="true" aria-labelledby="up-title">
+<div class="mcard upcard"><button type="button" class="mclose" id="up-close" aria-label="Close">&times;</button>
+<h3 class="amt" id="up-title">Upload photo</h3>
+<div class="upopts"><button type="button" class="upopt" id="up-cam"><b>Camera</b><span>Take a new photo</span></button><button type="button" class="upopt" id="up-gal"><b>Gallery</b><span>Choose from files</span></button></div>
+<p class="hint">JPG, PNG or WebP, max 5 MB.</p></div></div>
+<div class="toast" id="ad-toast" role="status"></div>
+</div>
+<main>
+<section class="hero" id="home">
+<h1>LB<br>Fitness</h1>
+<p>Free weights, real coaching and a floor that stays open late. Train with people who show up.</p>
+<div><a class="btn" href="#plans">See plans</a><a class="btn ghost" href="#visit">Visit us</a></div>
+<div class="stats"><div><b>400+</b><span>Members</span></div><div><b>4</b><span>Coaches</span></div><div><b>6,000</b><span>Sq ft floor</span></div><div><b>6</b><span>Days a week</span></div></div>
+</section>
+
+<section id="inside">
+<h2>Inside</h2>
+<p class="lead">Built for lifting first. Everything you need, nothing you don't.</p>
+<div class="feat">
+<div><h3>Advanced machines</h3><p>Modern strength machines for every major muscle group, smooth and safe to use.</p></div>
+<div><h3>Dumbbells</h3><p>2 kg to 40 kg, with flat, incline and adjustable benches.</p></div>
+<div><h3>Cable and machines</h3><p>Plate-loaded and selectorized stations for every muscle group.</p></div>
+<div><h3>Conditioning lane</h3><p>Sleds, ropes and rowers on a dedicated rubber floor.</p></div>
+<div><h3>Recovery</h3><p>Stretch zone, foam rollers and a steam room.</p></div>
+<div><h3>Lockers</h3><p>Full-size lockers, hot showers and filtered water.</p></div>
+</div>
+</section>
+
+<section id="plans">
+<h2>Plans</h2>
+<p class="lead">Pick a plan type, then choose how long you want to train. All payments are made at the front desk.</p>
+<div class="toggle" role="tablist" aria-label="Plan type">
+<button role="tab" id="tab-open" aria-selected="true" aria-controls="panel-open">Open</button>
+<button role="tab" id="tab-coached" aria-selected="false" aria-controls="panel-coached">Coached</button>
+</div>
+<div class="ppanel" id="panel-open" role="tabpanel" aria-labelledby="tab-open">
+<p class="pdesc">Full access to the gym floor, lockers and showers. Train on your own schedule.</p>
+<div class="pgrid">
+<article class="card plan"><h3>1 month</h3><div class="price">₹3,000</div><p class="sub">Pay monthly</p><a class="btn" href="#visit">Join at the desk</a></article>
+<article class="card plan"><h3>3 months</h3><div class="price">₹5,000</div><p class="sub">₹1,667 per month</p><a class="btn" href="#visit">Join at the desk</a></article>
+<article class="card plan"><h3>6 months</h3><div class="price">₹8,000</div><p class="sub">₹1,333 per month</p><a class="btn" href="#visit">Join at the desk</a></article>
+<article class="card plan best"><span class="tag">Best value</span><h3>12 months</h3><div class="price">₹12,000</div><p class="sub">₹1,000 per month</p><a class="btn" href="#visit">Join at the desk</a></article>
+</div></div>
+<div class="ppanel" id="panel-coached" role="tabpanel" aria-labelledby="tab-coached" hidden>
+<p class="pdesc">Everything in Open, plus a personal coach, a custom training plan and regular progress reviews.</p>
+<div class="pgrid">
+<article class="card plan"><h3>1 month</h3><div class="price">₹12,000</div><p class="sub">Pay monthly</p><a class="btn" href="#visit">Join at the desk</a></article>
+<article class="card plan"><h3>3 months</h3><div class="price">₹24,000</div><p class="sub">₹8,000 per month</p><a class="btn" href="#visit">Join at the desk</a></article>
+<article class="card plan"><h3>6 months</h3><div class="price">₹36,000</div><p class="sub">₹6,000 per month</p><a class="btn" href="#visit">Join at the desk</a></article>
+<article class="card plan best"><span class="tag">Best value</span><h3>12 months</h3><div class="price">₹48,000</div><p class="sub">₹4,000 per month</p><a class="btn" href="#visit">Join at the desk</a></article>
+</div></div>
+</section>
+
+<section id="coaches">
+<h2>Coaches</h2>
+<p class="lead">Certified, on the floor every shift, and happy to correct your form.</p>
+<div class="team">
+<article class="pcard" data-bio="Strength and powerlifting. 12 years coaching." data-tags="Powerlifting,Strength" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Rohan Kapoor, view details" data-photo="img/coaches/rohan.jpg"><div class="ph" style="--g:linear-gradient(160deg,#7a4a1d,#2b1a0b)"><span>RK</span></div><div class="pb"><h3>Rohan Kapoor</h3><p class="role">Head coach</p></div></article>
+<article class="pcard" data-bio="Fat loss and conditioning. Runs the 6am class." data-tags="HIIT,Fat loss" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Aisha Mehta, view details" data-photo="img/coaches/aisha.jpg"><div class="ph" style="--g:linear-gradient(160deg,#1f4d5c,#0c1f26)"><span>AM</span></div><div class="pb"><h3>Aisha Mehta</h3><p class="role">HIIT coach</p></div></article>
+<article class="pcard" data-bio="Former state-level fighter. Technique and cardio." data-tags="Boxing,Conditioning" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Dev Sharma, view details" data-photo="img/coaches/dev.jpg"><div class="ph" style="--g:linear-gradient(160deg,#5a2a40,#210f19)"><span>DS</span></div><div class="pb"><h3>Dev Sharma</h3><p class="role">Boxing coach</p></div></article>
+<article class="pcard" data-bio="Rehab, mobility and beginner programs." data-tags="Mobility,Beginners" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Nisha Patel, view details" data-photo="img/coaches/nisha.jpg"><div class="ph" style="--g:linear-gradient(160deg,#2f5a35,#10200f)"><span>NP</span></div><div class="pb"><h3>Nisha Patel</h3><p class="role">Mobility coach</p></div></article>
+</div>
+</section>
+
+<section id="gallery">
+<h2>Gallery</h2>
+<p class="lead">A look around the floor.</p>
+<div class="gal">
+<div tabindex="0" role="button" aria-haspopup="dialog" data-src="img/p2.jpg" style="background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.6)),var(--p2) center 50%/cover no-repeat">Dumbbell rack</div>
+<div tabindex="0" role="button" aria-haspopup="dialog" data-src="img/p1.jpg" style="background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.6)),var(--p1) 50% 45%/cover no-repeat">Cable stations</div>
+<div tabindex="0" role="button" aria-haspopup="dialog" data-src="img/p2.jpg" style="background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.6)),var(--p2) 85% 35%/230% no-repeat">Heavy dumbbells</div>
+<div tabindex="0" role="button" aria-haspopup="dialog" data-src="img/p1.jpg" style="background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.6)),var(--p1) 50% 62%/cover no-repeat">Lifting platform</div>
+<div tabindex="0" role="button" aria-haspopup="dialog" data-src="img/p3.jpg" style="background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.6)),var(--p3) center/cover no-repeat">Our logo</div>
+<div tabindex="0" role="button" aria-haspopup="dialog" data-src="img/p4.jpg" style="background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.6)),var(--p4) center/cover no-repeat">Machines floor</div>
+</div>
+</section>
+
+<section id="stories">
+<h2>Testimonials</h2>
+<p class="lead">From members who stuck with it.</p>
+<div class="stack">
+<blockquote class="card"><p>Lost 14 kg in five months. Aisha's morning class is the only reason I wake up at 5:30.</p><footer>Karan J., Coached member for 1 year</footer></blockquote>
+<blockquote class="card"><p>I'd never touched a barbell. Rohan fixed my squat in two sessions and my back pain went away.</p><footer>Meera S., Coached member</footer></blockquote>
+<blockquote class="card"><p>Clean, never overcrowded, and the equipment is always working. Best gym I've trained in.</p><footer>Imran A., Open member</footer></blockquote>
+</div>
+</section>
+
+<section id="visit" class="info">
+<h2>Visit us</h2>
+<p class="lead">Walk in for a free day pass. Bring a towel and water.</p>
+<div class="card">
+<dl>
+<dt>Address</dt><dd>Mahalaxmi Complex, Near Harmony Cinema, Bhatar, Althan, Surat, Gujarat 395017</dd>
+<dt>Hours</dt><dd>Mon to Sat: 5am to 11pm<br>Sun: Closed</dd>
+<dt>Phone</dt><dd><a href="tel:+910000000000">+91 00000 00000</a></dd>
+<dt>Parking</dt><dd>Free for members, basement level</dd>
+</dl>
+<a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=LB+Fitness+Gym+Mahalaxmi+Complex+Althan+Surat" target="_blank" rel="noopener" aria-label="Open our location in Google Maps"><i></i><b>Get directions</b></a>
+</div>
+<p style="margin-top:20px"><a class="btn" href="tel:+910000000000">Call to book a free pass</a></p>
+</section>
+<div class="cta"><h2>First day is free</h2><p>Bring a towel. We'll bring the coaching.</p><a class="btn" href="#visit">Get your free pass</a></div>
+</main>
+<footer class="site">© LB FITNESS. Train hard, rest well. &middot; <a href="#login" data-mode="admin">Admin sign in</a></footer>
+<div class="cm" id="coach-modal" role="dialog" aria-modal="true" aria-labelledby="cm-name">
+<div class="cm-card">
+<button type="button" class="cm-x" id="cm-x" aria-label="Close">&times;</button>
+<div class="ph" id="cm-ph"><span></span></div>
+<div class="cm-body"><h3 id="cm-name"></h3><p class="role" id="cm-role"></p><p class="bio" id="cm-bio"></p><div class="tags" id="cm-tags"></div><p class="cm-note" id="cm-note"></p></div>
+</div></div>
+<div class="cm" id="gl-modal" role="dialog" aria-modal="true" aria-label="Gallery photo">
+<div class="gl-wrap"><button type="button" class="cm-x" id="gl-x" aria-label="Close">&times;</button><img id="gl-img" alt=""><p id="gl-cap"></p></div></div>
+<script src="/app.js"></script>
+</body>
+</html>
